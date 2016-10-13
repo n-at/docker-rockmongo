@@ -22,5 +22,6 @@ VOLUME ["/var/www/rockmongo/config.php", "/var/www/rockmongo/logs", "/var/log/ng
 
 EXPOSE 80
 
-CMD php5-fpm --allow-to-run-as-root --nodaemonize --fpm-config /etc/php5/fpm/php-fpm.conf & \
+CMD php-fpm5.5 --allow-to-run-as-root \
+               --nodaemonize --fpm-config /etc/php/5.5/fpm/php-fpm.conf & \
     nginx -g "daemon off;"
